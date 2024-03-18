@@ -30,8 +30,15 @@ class Auto:
     def kulje(self, aika):
             self.kuljettu_matka += aika*self.nopeus
 
+    def tiedot(self):
+        print(f"Rekisteritunnus: {self.rekisteritunnus} \n"
+              f"Huippunopeus: {self.huippunopeus} \n"
+              f"nopeus: {self.nopeus} \n"
+              f"Kuljettu matka: {self.kuljettu_matka} \n")
+
 jatka = True
 autot=[]
+
 for i in range(1, 11):
     autot.append(Auto(f"abc-{i}", np.random.randint(100, 200)))
 
@@ -45,6 +52,7 @@ while jatka == True:
 
 for auto in autot:
     if auto.kuljettu_matka >= 10000:
-        print(f"voittaja: {auto.rekisteritunnus} {auto.kuljettu_matka} ")
+        print(f"voittaja: ")
+        auto.tiedot()
     else:
-        print(auto.rekisteritunnus, auto.kuljettu_matka)
+        auto.tiedot()
