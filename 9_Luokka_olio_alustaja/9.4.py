@@ -30,16 +30,21 @@ class Auto:
     def kulje(self, aika):
             self.kuljettu_matka += aika*self.nopeus
 
-auto1 = Auto("abc-1",np.random.randint(100, 200))
-auto2 = Auto("abc-2",np.random.randint(100, 200))
-auto3 = Auto("abc-3",np.random.randint(100, 200))
+jatka = True
+autot=[]
+for i in range(1, 11):
+    autot.append(Auto(f"abc-{i}", np.random.randint(100, 200)))
 
-while True:
-    for auto in [auto1, auto2, auto3]:
+while jatka == True:
+    for auto in autot:
         if auto.kuljettu_matka < 10000:
             auto.kulje(1)
             auto.kiihdyta()
         else:
-            break
+            jatka = False
 
-print(f"Auto: {auto1.rekisteritunnus} Kuljettu matka: {auto1.kuljettu_matka} \nAuto: {auto2.rekisteritunnus} Kuljettu matka: {auto2.kuljettu_matka} \nAuto: {auto3.rekisteritunnus} Kuljettu matka: {auto3.kuljettu_matka}")
+for auto in autot:
+    if auto.kuljettu_matka >= 10000:
+        print(f"voittaja: {auto.rekisteritunnus} {auto.kuljettu_matka} ")
+    else:
+        print(auto.rekisteritunnus, auto.kuljettu_matka)
