@@ -61,6 +61,7 @@ class romuralli:
             if indexi == viimeinen_indexi and romuralli.tunnit % 10 == 0:
                 print("-" * 43)
         romuralli.tunnit += 1
+
     def autot_lisaa(self, autojen_maara):
         for i in range(autojen_maara):
             self.autot.append(Auto(f"abc-{i}", np.random.randint(100, 200)))
@@ -70,12 +71,15 @@ class romuralli:
             i.kiihdyta()
             i.kulje(1)
 
+def main():
+    kilpailu = romuralli(8000, 10)
 
-kilpailu = romuralli(8000, 10)
+    jatka = True
 
+    while jatka == True:
+        kilpailu.jatka()
+        jatka = kilpailu.kilpailu_ohi()
+        kilpailu.tulosta_tilanne()
 
-jatka = True
-while jatka == True:
-    kilpailu.jatka()
-    jatka = kilpailu.kilpailu_ohi()
-    kilpailu.tulosta_tilanne()
+if __name__ == "__main__":
+    main()
