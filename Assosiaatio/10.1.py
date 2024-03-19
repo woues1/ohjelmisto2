@@ -1,11 +1,11 @@
 class elevator:
     def __init__(self, top_floor, bottom_floor):
         self.top_floor = top_floor
-        self.bottmo_floor = bottom_floor
+        self.bottom_floor = bottom_floor
         self.floor = bottom_floor
 
     def move_to_floor(self, floor):
-        if floor > self.top_floor or floor < self.bottmo_floor:
+        if floor > self.top_floor or floor < self.bottom_floor:
             return print("Floor does not exist")
 
         if self.floor < floor:
