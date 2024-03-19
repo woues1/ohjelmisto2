@@ -5,8 +5,13 @@ class Auto:
         self.nopeus = 0
         self.kuljettu_matka = 0
 
+    def tiedot(self):
+        print(f"Rekisteritunnus {self.rekisteritunnus} \n"
+              f"Huippunopeus {self.huippunopeus} \n"
+              f"nopeus {self.nopeus} \n"
+              f"Kuljettu matka {self.kuljettu_matka} \n")
 
 
-auto = Auto("ABC-123", "142km/h")
+auto = Auto("ABC-123", 142)
 
-print(auto.rekisteritunnus, auto.huippunopeus, auto.nopeus, auto.kuljettu_matka)
+auto.tiedot()
