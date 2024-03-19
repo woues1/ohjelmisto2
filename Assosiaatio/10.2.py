@@ -5,7 +5,6 @@ class House:
         self.number_of_elevators = number_of_elevators
         self.elevators = []
         self.add_elevator()
-
     def add_elevator(self):
         for i in range(1, self.number_of_elevators+1):
             self.elevators.append(Elevator(self.top_floor, self.bottom_floor, i))
