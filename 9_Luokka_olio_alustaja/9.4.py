@@ -31,10 +31,10 @@ class Auto:
             self.kuljettu_matka += aika*self.nopeus
 
     def tiedot(self):
-        print(f"Rekisteritunnus: {self.rekisteritunnus} \n"
-              f"Huippunopeus: {self.huippunopeus} \n"
-              f"nopeus: {self.nopeus} \n"
-              f"Kuljettu matka: {self.kuljettu_matka} \n")
+        if self.kuljettu_matka >= 10000:
+            print(f"{self.rekisteritunnus:7} | {self.kuljettu_matka:7}km | {self.nopeus:4} km/h | {self.huippunopeus:4} km/h *")
+        else:
+            print(f"{self.rekisteritunnus:7} | {self.kuljettu_matka:7}km | {self.nopeus:4} km/h | {self.huippunopeus:4} km/h")
 
 jatka = True
 autot=[]
@@ -51,8 +51,4 @@ while jatka == True:
             jatka = False
 
 for auto in autot:
-    if auto.kuljettu_matka >= 10000:
-        print(f"voittaja: ")
-        auto.tiedot()
-    else:
-        auto.tiedot()
+    auto.tiedot()
