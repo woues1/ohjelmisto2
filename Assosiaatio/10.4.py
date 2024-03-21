@@ -1,16 +1,6 @@
-"""Nyt ohjelmoidaan autokilpailu. Uuden auton kuljettu matka alustetaan automaattisesti nollaksi.
-Tee pääohjelman alussa lista, joka koostuu kymmenestä toistorakenteella luodusta auto-oliosta.
-Jokaisen auton huippunopeus arvotaan 100 km/h ja 200 km/h väliltä.
-Rekisteritunnus luodaan seuraavasti "ABC-1", "ABC-2" jne. Sitten kilpailu alkaa.
-Kilpailun aikana tehdään tunnin välein seuraavat toimenpiteet:
-
-Jokaisen auton nopeutta muutetaan siten, että nopeuden muutos arvotaan väliltä -10 ja +15 km/h väliltä.
-Tämä tehdään kutsumalla kiihdytä-metodia.
-Kaikkia autoja käsketään liikkumaan yhden tunnin ajan. Tämä tehdään kutsumalla kulje-metodia.
-Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä.
-Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna."""
-
 import numpy as np
+
+
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus: str = rekisteritunnus
@@ -46,7 +36,6 @@ class romuralli:
         return True
 
     def tulosta_tilanne(self):
-
         viimeinen_indexi = len(self.autot) - 1
 
         for indexi, i in enumerate(self.autot):
@@ -71,6 +60,7 @@ class romuralli:
             i.kiihdyta()
             i.kulje(1)
 
+
 def main():
     kilpailu = romuralli(8000, 10)
 
@@ -80,6 +70,7 @@ def main():
         kilpailu.jatka()
         jatka = kilpailu.kilpailu_ohi()
         kilpailu.tulosta_tilanne()
+
 
 if __name__ == "__main__":
     main()
