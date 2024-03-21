@@ -39,8 +39,14 @@ class Elevator:
         else:
             return print("Elevator is already at this floor")
 
-house = House(10, 0, 3)
-house.move_elevators(3, 5)
-house.move_elevators(1, 1)
-house.move_elevators(4, 10)
-house.move_elevators(1, 20)
+h_top_floor = int(input("House top floor: "))
+h_bottom_floor = int(input("House bottom floor: "))
+elevator_number = int(input("Number of elevators: "))
+house = House(h_top_floor, h_bottom_floor, elevator_number)
+
+while True:
+    elevator_number = int(input("Choose an elevator: "))
+    target_floor = int(input("Choose a target floor: "))
+    house.move_elevators(elevator_number, target_floor)
+    if elevator_number == -1 or target_floor == -1:
+        break
