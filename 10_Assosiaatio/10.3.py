@@ -32,17 +32,23 @@ class Elevator:
         if self.top_floor < floor or self.bottom_floor > floor:
             return print("Floor does not exist")
         if self.floor < floor:
-            for i in range(self.floor, floor+1):
-                self.floor = i
+            for i in range(self.floor, floor):
+                self.floor_up()
                 print(f"Elevator: {self.elevator_number} | current floor: {self.floor}\n")
 
         elif self.floor > floor:
-            for i in range(self.floor, floor - 1, -1):
-                self.floor = i
+            for i in range(self.floor, floor, -1):
+                self.floor_down()
                 print(f"Elevator: {self.elevator_number} | current floor: {self.floor}\n")
 
         else:
             return print("Elevator is already at this floor")
+
+    def floor_up(self):
+        self.floor += 1
+
+    def floor_down(self):
+        self.floor -= 1
 
 h_top_floor = int(input("House top floor: "))
 h_bottom_floor = int(input("House bottom floor: "))
