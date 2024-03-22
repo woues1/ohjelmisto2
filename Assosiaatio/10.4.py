@@ -24,7 +24,8 @@ class Auto:
 class romuralli:
     tunnit = 0
 
-    def __init__(self, kilometri_maara, autojen_maara):
+    def __init__(self,nimi, kilometri_maara, autojen_maara):
+        self.nimi = nimi
         self.autot = []
         self.kilometri_maara = kilometri_maara
         self.autot_lisaa(autojen_maara)
@@ -62,7 +63,7 @@ class romuralli:
 
 
 def main():
-    kilpailu = romuralli(8000, 10)
+    kilpailu = romuralli("Suuri romuralli",8000, 10)
 
     jatka = True
 
