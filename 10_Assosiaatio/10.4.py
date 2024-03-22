@@ -60,7 +60,8 @@ class romuralli:
         for i in self.autot:
             i.kiihdyta()
             i.kulje(1)
-
+        self.tulosta_tilanne()
+        return self.kilpailu_ohi()
 
 def main():
     kilpailu = romuralli("Suuri romuralli",8000, 10)
@@ -68,9 +69,8 @@ def main():
     jatka = True
 
     while jatka == True:
-        kilpailu.jatka()
-        jatka = kilpailu.kilpailu_ohi()
-        kilpailu.tulosta_tilanne()
+        jatka = kilpailu.jatka()
+
 
 
 if __name__ == "__main__":
