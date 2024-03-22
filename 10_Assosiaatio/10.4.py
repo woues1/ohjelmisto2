@@ -56,7 +56,7 @@ class romuralli:
         for i in range(autojen_maara):
             self.autot.append(Auto(f"abc-{i}", np.random.randint(100, 200)))
 
-    def jatka(self):
+    def tunti_kuluu(self):
         for i in self.autot:
             i.kiihdyta()
             i.kulje(1)
@@ -69,7 +69,7 @@ def main():
     jatka = True
 
     while jatka == True:
-        jatka = kilpailu.jatka()
+        jatka = kilpailu.tunti_kuluu()
 
 
 if __name__ == "__main__":
