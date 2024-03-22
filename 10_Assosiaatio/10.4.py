@@ -72,6 +72,5 @@ def main():
         jatka = kilpailu.jatka()
 
 
-
 if __name__ == "__main__":
     main()
