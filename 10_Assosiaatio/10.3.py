@@ -8,13 +8,17 @@ class House:
 
     def add_elevator(self):
         for i in range(1, self.number_of_elevators+1):
-            self.elevators.append( Elevator(self.top_floor, self.bottom_floor, i))
+            self.elevators.append(Elevator(self.top_floor, self.bottom_floor, i))
 
     def move_elevators(self, elevator_number, floor):
         try:
             self.elevators[elevator_number-1].move_to_floor(floor)
         except IndexError:
             print("Elevator does not exist")
+
+    def fire_alarm(self):
+        for i in range(len(self.elevators)):
+            self.elevators[i].move_to_floor(self.bottom_floor)
 
 
 class Elevator:
@@ -40,8 +44,17 @@ class Elevator:
         else:
             return print("Elevator is already at this floor")
 
-house = House(10, 0, 3)
-house.move_elevators(3, 5)
-house.move_elevators(1, 1)
-house.move_elevators(4, 10)
-house.move_elevators(1, 20)
+h_top_floor = int(input("House top floor: "))
+h_bottom_floor = int(input("House bottom floor: "))
+elevator_number = int(input("Number of elevators: "))
+house = House(h_top_floor, h_bottom_floor, elevator_number)
+
+while True:
+    elevator_number = input("Choose an elevator: ")
+    target_floor = input("Choose a target floor: ")
+    if elevator_number == "-1" or target_floor == "-1":
+        break
+    elif elevator_number == "Alarm" or target_floor == "Alarm":
+        house.fire_alarm()
+    else:
+        house.move_elevators(int(elevator_number), int(target_floor))

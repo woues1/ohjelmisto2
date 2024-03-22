@@ -23,4 +23,4 @@ class elevator:
 
 h = elevator(10, 0)
 h.move_to_floor(5)
-h.move_to_floor(2)
+h.move_to_floor(0)
