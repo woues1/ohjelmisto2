@@ -1,0 +1,118 @@
+
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.hero {
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    background: #aaa;
+    height: 200px;
+    line-height: 200px;
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.product {
+    background: #eee;
+    padding: 20px;
+    width: 30%; / Adjust the width as needed /
+    text-align: center;
+}
+
+.product-image {
+    background: #ccc;
+    height: 200px;
+    line-height: 200px;
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.contact {
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+.map {
+    background: #aaa;
+    height: 200px;
+    line-height: 200px;
+    color: #fff;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
