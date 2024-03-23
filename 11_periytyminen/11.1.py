@@ -25,8 +25,8 @@ class Lehti(julkaisu):
         print(f"Päätoittaja: {self.paatoimittaja}")
 
 julkaisut = []
-julkaisut.append(lehti("Aku Ankka", "Aki Hyyppa"))
-julkaisut.append(kirja("Hytti n:o 6", "Rosa Liksom", 200))
+julkaisut.append(Lehti("Aku Ankka", "Aki Hyyppa"))
+julkaisut.append(Kirja("Hytti n:o 6", "Rosa Liksom", 200))
 
 for julkaisu in julkaisut:
     julkaisu.tulosta_tiedot()
