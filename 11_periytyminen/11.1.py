@@ -5,7 +5,8 @@ class julkaisu:
     def tulosta_tiedot(self):
         print(f"nimi: {self.nimi}")
 
-class kirja(julkaisu):
+
+class Kirja(julkaisu):
     def __init__(self, nimi, kirjoittaja, sivumaara):
         self.kirjoittaja = kirjoittaja
         self.sivumaara = sivumaara
@@ -15,7 +16,8 @@ class kirja(julkaisu):
         super().tulosta_tiedot()
         print(f"Kirjoittaja: {self.kirjoittaja} | sivumaara: {self.sivumaara}")
 
-class lehti(julkaisu):
+
+class Lehti(julkaisu):
     def __init__(self, nimi, paatoimittaja):
         self.paatoimittaja = paatoimittaja
         super().__init__(nimi)
@@ -23,10 +25,13 @@ class lehti(julkaisu):
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
         print(f"Päätoittaja: {self.paatoimittaja}")
+def main():
+    julkaisut = []
+    julkaisut.append(Lehti("Aku Ankka", "Aki Hyyppa"))
+    julkaisut.append(Kirja("Hytti n:o 6", "Rosa Liksom", 200))
 
-julkaisut = []
-julkaisut.append(lehti("Aku Ankka", "Aki Hyyppa"))
-julkaisut.append(kirja("Hytti n:o 6", "Rosa Liksom", 200))
+    for julkaisu in julkaisut:
+        julkaisu.tulosta_tiedot()
 
-for julkaisu in julkaisut:
-    julkaisu.tulosta_tiedot()
+if __name__ == "__main__":
+    main()

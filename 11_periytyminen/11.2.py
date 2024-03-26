@@ -46,12 +46,15 @@ class Polttomoottoriauto(Auto):
         super().tiedot()
         print(f"Polttoaineen maara: {self.bensatankin_koko} l\n")
 
+def main():
+    Autot = []
+    Autot.append(Sahkoauto("ABC-15", 180, 52.5))
+    Autot.append(Polttomoottoriauto("ACD-123", 165, 32.3))
 
-Autot = []
-Autot.append(Sahkoauto("ABC-15", 180, 52.5))
-Autot.append(Polttomoottoriauto("ACD-123", 165, 32.3))
+    for auto in Autot:
+        auto.nopeus = 80
+        auto.kulje(3)
+        auto.tiedot()
 
-for auto in Autot:
-    auto.nopeus = 80
-    auto.kulje(3)
-    auto.tiedot()
+if __name__ == "__main__":
+    main()
