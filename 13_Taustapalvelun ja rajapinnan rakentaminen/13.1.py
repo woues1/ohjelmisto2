@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 # http://127.0.0.1:3000/is_prime?n=31
 
 app = Flask(__name__)
