@@ -1,13 +1,14 @@
 from flask import Flask, request
+# http://127.0.0.1:3000/is_prime?n=31
 
 app = Flask(__name__)
 
-@app.route("/is_prime")
-def is_prime():
-    n = int(request.args.get("n"))
+@app.route("/is_prime/<num>")
+def is_prime(num):
+    n = int(num)
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
-            return f"{i} is not a prime number"
+            return f"{n} is not a prime number"
     return f"{n} is a prime number"
 
 if __name__ == "__main__":
