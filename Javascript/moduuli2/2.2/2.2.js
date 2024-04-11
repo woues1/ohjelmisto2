@@ -1,16 +1,26 @@
 'use strict';
 
 document.addEventListener("DOMContentLoaded", function () {
+    const num = parseInt(prompt("Osallistujien määrä"));
 
-    participants(parseInt(prompt('Anna osallistujien määrä')))
-    function participants(num){
-        const list = document.createElement('ol');
-        list.setAttribute('id', 'lista');
-        document.body.appendChild(list);
-        for(let i = 0; i <= num; ++i){
-            let name = prompt('Anna nimi');
-            list.appendChild(name);
-        };
+    let participants = [];
 
+    for (let i = 0; i < num; i++) {
+        let Name = prompt("Anna nimi " + (i+1));
+        participants.push(Name);
     };
+    participants.sort();
+
+    create_html(participants)
+    function create_html(participants) {
+        let ol = document.createElement('ol')
+        document.body.appendChild(ol);
+
+        for (let i = 0; i < participants.length; i++) {
+            let list_name = document.createElement('li');
+            list_name.textContent = participants[i];
+            ol.appendChild(list_name);
+        };
+    };
+
 });
