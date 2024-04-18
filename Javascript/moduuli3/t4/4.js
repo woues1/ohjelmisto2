@@ -1,4 +1,5 @@
 'use strict';
+
 const students = [
   {
     name: 'John',
@@ -13,3 +14,12 @@ const students = [
     id: '5423679',
   },
 ];
+
+const target = document.getElementById('target');
+
+for (let i = 0; i < students.length; ++i) {
+  let item = document.createElement('option');
+  item.setAttribute('value', `${students[i].id}`);
+  item.textContent = students[i].name; // Accessing student name from the array
+  target.appendChild(item);
+}
